@@ -23,10 +23,11 @@ module.exports = {
         test: /\.s[ac]ss$/i,
         use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
       },
-      {
-        test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
-        type: "asset",
-      },
+      // REMOVED THE IMAGE RULE HERE TO AVOID CONFLICT
+      // {
+      //   test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
+      //   type: "asset",
+      // },
       {
         test: /\.html$/i,
         loader: "html-loader",

@@ -1,13 +1,255 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MP1</title>
-    </head>
-    <body>
-        <h1>Hello World! Welcome to MP1!</h1>
-        <img src="assets/image.jpg">
-    </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Trattoria Vespero — Italian Food</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/main.scss" />
+</head>
+<body>
+  <!-- Sticky top nav -->
+  <header id="topHeader" class="site-header">
+    <nav id="siteNav" class="navbar">
+      <div class="nav-inner">
+        <div class="brand">
+          <img src="https://plus.unsplash.com/premium_photo-1677706562620-7bd66a851874?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Vespero logo" />
+          <span class="brand-name"> Vespero </span>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#hero" data-target="hero" class="nav-link">Home</a></li>
+          <li><a href="#reviews" data-target="reviews" class="nav-link">Reviews</a></li>
+          <li><a href="#menu" data-target="menu" class="nav-link">Menu</a></li>
+          <li><a href="#gallery" data-target="gallery" class="nav-link">Gallery</a></li>
+          <li><a href="#video" data-target="video" class="nav-link">Video</a></li>
+          <li><a href="#contact" data-target="contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="social">
+          <a href="#" aria-label="facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+
+      <!-- position progress indicator -->
+      <div id="navProgress" class="nav-progress"><span></span></div>
+    </nav>
+  </header>
+
+  <!-- Each section is a full-width horizontal stripe/section -->
+  <main>
+    <!-- HERO: vertically centered content (uses flexbox) -->
+    <section id="hero" class="stripe hero">
+      <div class="hero-content centered-vertical">
+        <h1>Welcome to Trattoria Vespero</h1>
+        <p>True flavours of Italy — handmade pasta, wood-fired pizza, and coastal wines.</p>
+        <div class="cta">
+          <a href="#menu" class="btn primary">View Menu</a>
+          <button class="btn" data-modal-open="reservationModal">Reserve</button>
+        </div>
+      </div>
+    </section>
+
+<!-- About: -->
+    <section id="about" class="section section--about" aria-label="About Vespero">
+        <div class="about__scrim">
+          <div class="about__inner">
+            <h2 class="section__title section__title--light">About Vespero</h2>
+            <p class="about__text">
+              At Vespero, every dish tells a story. Our chef, Lucia, trained in Naples, brings the warmth 
+              of Italian tradition to your plate — handmade pasta, wood-fired pizza, and the finest local wines. 
+            </p>
+            <p class="about__text">
+              We believe food is love — slow-cooked with seasonal produce, baked bread fresh every morning, 
+              and served like family.
+            </p>
+          </div>
+        </div>
+      </section>
+      
+
+<!-- REVIEWS (multi-column grid, background-fixed image) -->
+<section id="reviews" class="stripe reviews bg-fixed">
+    <div class="container">
+      <h2>Reviews</h2>
+      <div class="columns reviews-grid">
+        <div class="review">
+          <p class="quote">"The best pasta I’ve had outside of Italy — absolutely authentic!"</p>
+          <p>- Anna R.</p>
+        </div>
+        <div class="review">
+          <p class="quote">"Wood-fired pizza with the perfect crust. Highly recommend Vespero!"</p>
+          <p>- Marco L.</p>
+        </div>
+        <div class="review">
+          <p class="quote">"A cozy, warm atmosphere paired with excellent wine choices."</p>
+          <p>- Sophia K.</p>
+        </div>
+        <div class="review">
+          <p class="quote">"Lucia’s slow-cooked sauces are heavenly. You can taste the love."</p>
+          <p>- James P.</p>
+        </div>
+        <div class="review">
+          <p class="quote">"Bread baked fresh daily — you smell it before you even walk in!"</p>
+          <p>- Emily S.</p>
+        </div>
+        <div class="review">
+          <p class="quote">"A true hidden gem — Amalfi and Tuscany flavors right here in town."</p>
+          <p>- Daniel W.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+    <!-- MENU (multi-column grid + modal windows for items) -->
+    <section id="menu" class="stripe menu">
+      <div class="container">
+        <h2>Menu Highlights</h2>
+        <div class="menu-grid">
+          <article class="menu-item">
+            <img src="assets/carbonna.jpg" alt="Pasta Carbonara">
+            <h3>Pasta Carbonara</h3>
+            <p class="price">$18</p>
+            <button class="btn small" data-modal-open="modal1">More</button>
+          </article>
+          <article class="menu-item">
+            <img src="assets/pizza.jpg" alt="Margherita">
+            <h3>Margherita Pizza</h3>
+            <p class="price">$16</p>
+            <button class="btn small" data-modal-open="modal2">More</button>
+          </article>
+          <article class="menu-item">
+            <img src="assets/tiramisu.jpg" alt="Tiramisu">
+            <h3>Tiramisu</h3>
+            <p class="price">$9</p>
+            <button class="btn small" data-modal-open="modal3">More</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAROUSEL / GALLERY -->
+    <section id="gallery" class="stripe carousel-section">
+      <div class="container">
+        <h2>Gallery</h2>
+        <div class="carousel" id="carousel">
+          <button class="carousel-arrow left" data-dir="left"><i class="fa fa-chevron-left"></i></button>
+          <div class="carousel-track" id="carouselTrack">
+            <div class="slide"><img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt=""></div>
+            <div class="slide"><img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt=""></div>
+            <div class="slide"><img src="https://images.unsplash.com/photo-1592861956120-e524fc739696?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt=""></div>
+            <div class="slide"><img src="https://images.unsplash.com/photo-1683771419613-0a608d8f5cf6?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt=""></div>
+           </div>
+          <button class="carousel-arrow right" data-dir="right"><i class="fa fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO -->
+
+
+    <section id="video" class="stripe video-stripe">
+        <div class="container">
+          <h2>Our Service</h2>
+          <div class="video-wrapper">
+            <video autoplay muted loop playsinline preload="auto">
+              <source src="assets/service.mp4" type="video/mp4" />
+              Your browser does not support HTML5 video.
+            </video>
+          </div>
+        </div>
+      </section>
+      
+    
+
+    <section id="contact" class="stripe">
+        <div class="container">
+            <h2>Contact & Location</h2>
+            <div class="contact-grid">
+                <div class="address">
+                    <p>123 Vespero Lane, Little Italy</p>
+                    <p>Open: Tue–Sun 11am–11pm</p>
+                    <p>Phone: (555) 123-VEPS</p>
+                    <div class="social large">
+                        <a href="#" aria-label="facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <!-- This element will be perfectly vertically centered -->
+                <div class="map-preview centered-vertical">
+                    <div class="map-card">
+                        <h3>Find Us</h3>
+                        <p>Located in the heart of Little Italy</p>
+                        <button class="btn" data-modal-open="reservationModal">Reserve a Table</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="stripe footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <h4>Trattoria Vespero</h4>
+            <p>© <span id="year"></span> Trattoria Vespero</p>
+          </div>
+          <div>
+            <h4>Hours</h4>
+            <p>Tue–Sun 11am–11pm</p>
+          </div>
+          <div>
+            <h4>Newsletter</h4>
+            <form id="newsletterForm">
+              <input type="email" placeholder="Your email" required />
+              <button class="btn small" type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Modal templates (hidden) -->
+  <div id="modalBackdrop" class="modal-backdrop" aria-hidden="true">
+    <!-- Example modal content -->
+    <div id="modal1" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <button class="modal-close" data-modal-close>&times;</button>
+      <h3>Pasta Carbonara</h3>
+      <p>Rich, creamy carbonara with guanciale and pecorino.</p>
+    </div>
+
+    <div id="modal2" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <button class="modal-close" data-modal-close>&times;</button>
+      <h3>Margherita Pizza</h3>
+      <p>Tomato, mozzarella di bufala, and fresh basil — wood-fired.</p>
+    </div>
+
+    <div id="modal3" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <button class="modal-close" data-modal-close>&times;</button>
+      <h3>Tiramisu</h3>
+      <p>Classic tiramisu with espresso-soaked ladyfingers and mascarpone.</p>
+    </div>
+
+    <div id="reservationModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <button class="modal-close" data-modal-close>&times;</button>
+      <h3>Reserve a Table</h3>
+      <form id="reservationForm">
+        <label>Name <input required /></label>
+        <label>Phone <input required /></label>
+        <label>Time <input type="datetime-local" required /></label>
+        <button class="btn" type="submit">Request</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- External JS -->
+  <script src="./js/main.js" defer></script>
+</body>
 </html>
